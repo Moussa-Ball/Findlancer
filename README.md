@@ -1,62 +1,56 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Findlancer repository - A marketplace like upwork.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Dependencies required
 
-## About Laravel
+To use this repository, you must first ensure that
+these dependencies below are already installed.
+Make sure your server meets the following requirements:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [tmux](https://doc.ubuntu-fr.org/tmux) (For multi window in terminal - NB: Linux or Mac)
+- [Node.js](https://nodejs.org/)
+- [yarn](https://yarnpkg.com)
+- [maildev](https://danfarrelly.nyc/MailDev/)
+- [Laravel Requirements](https://laravel.com/docs/5.8#server-requirements)
+- [make](http://www.gnu.org/software/make/) - (Already installed on Linux)
+- [composer](https://getcomposer.org/download/)
+- [elasticsearch](https://www.elastic.co/fr/elasticsearch/)
+- Database (Mysql/Others)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Usage
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Clone the repository first.
 
-## Learning Laravel
+``` bash
+$ git clone https://Moussa-Ball@bitbucket.org/uplancecanada/uplance.git
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Rename the .env.example file to .env and configure the environment variables 
+by adding also these variables below and their values.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Do not forget to configure the variables for the database and the email.
+After configuring the environment variables, proceed as follows in the terminal.
 
-## Laravel Sponsors
+NB: Linux/Mac
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+``` bash
+$ composer install
+$ yarn install
+$ php artisan migrate
+$ make dev
+```
 
-### Premium Partners
+:warning Do not make `make dev` on windows if you dont have installed `make` and `tmux`.
+Use [cmder](https://cmder.net/) and launch on each tab the commands below.
+Do the above steps without make dev then do what is mentioned below.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+``` bash
+$ php artisan serve
+$ yarn hot or npm run hot
+$ maildev --ip 127.0.0.1
+```
 
-## Contributing
+If you have a 404 problem or 500 with apache. Refer to this link below to solve the problem.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### [404 Error | Laravel - Apache](https://stackoverflow.com/questions/22757749/laravel-redirects-to-a-route-but-then-apache-gives-404-error)
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### [500 Error | Laravel - Apache](https://stackoverflow.com/questions/31543175/getting-a-500-internal-server-error-on-laravel-5-ubuntu-14-04)
